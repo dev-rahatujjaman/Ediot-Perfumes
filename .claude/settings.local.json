@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(mkdir *)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5000/)",
+      "Bash(curl -s -o /dev/null -w \"\\\\nFrontend HTTP Code: %{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(node *)"
+    ]
+  }
+}

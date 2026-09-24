@@ -1,0 +1,692 @@
+/* ==========================================
+   EDIOT BREEZE - APPLE-INSPIRED LUXURY DESIGN
+   ========================================== */
+
+/* Neue Montreal Font */
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/neuemontreal-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Apple-Inspired Luxury Palette */
+  --color-cream: #FDFCFA;
+  --color-warm-white: #FFFBF7;
+  --color-black: #1d1d1f;
+  --color-charcoal: #2c2c2e;
+  --color-gold: #B8956A;
+  --color-gold-light: #D4B895;
+  --color-beige: #EFEBE6;
+  --color-grey: #6e6e73;
+  --color-grey-light: #d2d2d7;
+  --color-soft-shadow: rgba(0, 0, 0, 0.04);
+
+  /* Luxury Typography - Neue Montreal for Everything */
+  --font-display: 'Neue Montreal', 'Outfit', 'Inter', sans-serif;
+  --font-text: 'Neue Montreal', 'Outfit', 'Inter', -apple-system, system-ui, sans-serif;
+
+  /* Refined Spacing */
+  --container-width: 1280px;
+  --section-padding: 140px;
+  --section-padding-mobile: 80px;
+  --grid-gap: 24px;
+
+  /* Apple-style Transitions */
+  --transition-smooth: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: initial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--color-cream);
+  color: var(--color-black);
+  line-height: 1.47059;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  overflow-x: hidden;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ==========================================
+   TYPOGRAPHY - APPLE STYLE
+   ========================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.0834933333;
+  letter-spacing: -0.015em;
+  color: var(--color-black);
+}
+
+h1 {
+  font-size: clamp(40px, 5.5vw, 80px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.07143;
+}
+
+h3 {
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.008em;
+  line-height: 1.1;
+}
+
+h4 {
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.006em;
+}
+
+p {
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.47059;
+  color: var(--color-charcoal);
+  letter-spacing: -0.022em;
+}
+
+.text-large {
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.381;
+  letter-spacing: -0.021em;
+}
+
+.text-small {
+  font-size: 14px;
+  line-height: 1.42859;
+  letter-spacing: -0.016em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+button {
+  font-family: var(--font-text);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--color-black);
+  color: var(--color-cream);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 980px;
+  font-family: var(--font-text);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 980px;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-black);
+  color: var(--color-cream);
+}
+
+.btn-primary:hover {
+  background: var(--color-charcoal);
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-black);
+  border: 1.5px solid var(--color-black);
+}
+
+.btn-secondary:hover {
+  background: var(--color-black);
+  color: var(--color-cream);
+}
+
+.btn-gold {
+  background: var(--color-gold);
+  color: white;
+}
+
+.btn-gold:hover {
+  background: var(--color-gold-light);
+  transform: scale(1.02);
+}
+
+/* ==========================================
+   CARDS & COMPONENTS - APPLE STYLE
+   ========================================== */
+
+.card {
+  background: var(--color-warm-white);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 2px 16px var(--color-soft-shadow);
+  transition: var(--transition-smooth);
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.product-card {
+  background: var(--color-warm-white);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.product-card:hover img {
+  transform: scale(1.03);
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-name {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.021em;
+  line-height: 1.19048;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: -0.009em;
+}
+
+/* ==========================================
+   HEADER / NAVBAR - APPLE STYLE
+   ========================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(253, 252, 250, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  transition: var(--transition-fast);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-black);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-black);
+}
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.icon-btn {
+  background: transparent;
+  padding: 6px;
+  font-size: 18px;
+  color: var(--color-black);
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  opacity: 0.6;
+}
+
+.cart-badge {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--color-gold);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* ==========================================
+   HERO SECTION - APPLE STYLE
+   ========================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-badge {
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  margin-bottom: 16px;
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  font-size: clamp(17px, 1.5vw, 21px);
+  color: var(--color-grey);
+  margin-bottom: 32px;
+  max-width: 560px;
+  line-height: 1.381;
+  letter-spacing: -0.021em;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  position: relative;
+  height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 25px 80px rgba(0, 0, 0, 0.12));
+}
+
+/* ==========================================
+   ANIMATIONS - APPLE STYLE
+   ========================================== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ==========================================
+   RESPONSIVE - APPLE BREAKPOINTS
+   ========================================== */
+
+@media (max-width: 1068px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-image {
+    height: 480px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 734px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-image {
+    height: 360px;
+  }
+}
+
+/* ==========================================
+   LOADING & TRANSITIONS
+   ========================================== */
+
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-beige);
+  border-top-color: var(--color-black);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   SCROLLBAR - APPLE STYLE
+   ========================================== */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-grey-light);
+  border-radius: 6px;
+  border: 3px solid var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-grey);
+}
+
+/* ==========================================
+   HERO VIDEO SECTION & ROTATING BUTTON
+   ========================================== */
+
+.hero-video-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #000000;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-video-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── Hero Rotating Circular Button ──────────────────────────────────────── */
+
+.hero-rotating-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 48px;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  background: #7808d0;
+  color: #fff;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+  transition: background 300ms ease, transform 200ms ease, box-shadow 300ms ease;
+  font-weight: 600;
+  font-family: inherit;
+  box-shadow: 0 8px 32px rgba(120, 8, 208, 0.4);
+}
+
+.hero-rotating-btn__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 9s linear infinite;
+  font-size: 8.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-rotating-btn__text > span {
+  position: absolute;
+  transform: rotate(calc(15.65deg * var(--index)));
+  inset: 8px;
+}
+
+.hero-rotating-btn__circle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  background: #fff;
+  color: #7808d0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 300ms ease;
+}
+
+.hero-rotating-btn__icon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease;
+}
+
+.hero-rotating-btn__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.hero-rotating-btn:hover {
+  background: #000;
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.hero-rotating-btn:hover .hero-rotating-btn__circle {
+  background: #fff;
+  color: #000;
+}
+
+.hero-rotating-btn:hover .hero-rotating-btn__icon:first-child {
+  transform: translate(150%, -150%);
+}
+
+.hero-rotating-btn:hover .hero-rotating-btn__icon--copy {
+  transform: translate(0);
+}
+
+@keyframes text-rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-rotating-btn {
+    bottom: 24px;
+    right: 24px;
+    width: 90px;
+    height: 90px;
+  }
+  .hero-rotating-btn__circle {
+    width: 36px;
+    height: 36px;
+  }
+  .hero-rotating-btn__text {
+    font-size: 7px;
+  }
+}
