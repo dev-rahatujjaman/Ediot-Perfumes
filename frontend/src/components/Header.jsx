@@ -95,6 +95,7 @@ const Header = () => {
 
   const cartItemsCount = cartItems ? cartItems.reduce((acc, item) => acc + (item.qty || 1), 0) : 0;
   const isHomePage = location.pathname === '/';
+  const isDarkHeader = !isHomePage || scrolled;
 
   // Trigger subtle bounce on cart count change
   useEffect(() => {
