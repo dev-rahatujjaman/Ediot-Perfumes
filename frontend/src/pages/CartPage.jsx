@@ -24,7 +24,7 @@ const CartPage = () => {
 
   return (
     <div style={{
-      paddingTop: '120px',
+      paddingTop: '135px',
       paddingBottom: '140px',
       background: 'var(--color-cream)',
       minHeight: '100vh',

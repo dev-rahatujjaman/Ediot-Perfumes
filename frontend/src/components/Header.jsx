@@ -191,12 +191,12 @@ const Header = () => {
         left: 0,
         right: 0,
         zIndex: 9990,
-        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-        background: scrolled ? 'rgba(10, 10, 12, 0.82)' : 'transparent',
-        backdropFilter: scrolled ? 'saturate(180%) blur(20px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'saturate(180%) blur(20px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.08)' : 'none',
-        boxShadow: scrolled ? '0 10px 35px rgba(0, 0, 0, 0.25)' : 'none',
+        transition: 'all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        background: isDarkHeader ? 'rgba(10, 10, 12, 0.92)' : 'transparent',
+        backdropFilter: isDarkHeader ? 'saturate(180%) blur(20px)' : 'none',
+        WebkitBackdropFilter: isDarkHeader ? 'saturate(180%) blur(20px)' : 'none',
+        borderBottom: isDarkHeader ? '1px solid rgba(255, 255, 255, 0.08)' : 'none',
+        boxShadow: isDarkHeader ? '0 10px 35px rgba(0, 0, 0, 0.25)' : 'none',
       }}>
         {/* TRANSPARENT MINIMALIST FLOATING NAVBAR */}
         <div>

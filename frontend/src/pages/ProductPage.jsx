@@ -43,7 +43,7 @@ const ProductPage = () => {
   if (!product) return null;
 
   return (
-    <div style={{ paddingTop: '120px', paddingBottom: '100px', background: 'var(--color-cream)' }}>
+    <div style={{ paddingTop: '135px', paddingBottom: '100px', background: 'var(--color-cream)' }}>
       <div className="container">
         {/* Back Link */}
         <Link to="/" style={{
