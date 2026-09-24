@@ -95,12 +95,7 @@ const PlaceOrderPage = () => {
 
         {error && <div style={{ marginBottom: '24px' }}><Message variant="error">{error}</Message></div>}
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 380px',
-          gap: '48px',
-          alignItems: 'start',
-        }}>
+        <div className="placeorder-layout-grid">
           {/* Order Details Column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {/* Delivery Card */}
@@ -196,15 +191,18 @@ const PlaceOrderPage = () => {
           </div>
 
           {/* Order Summary Column */}
-          <div style={{
-            background: 'var(--color-warm-white)',
-            borderRadius: '24px',
-            padding: '36px 32px',
-            border: '0.5px solid rgba(0, 0, 0, 0.04)',
-            boxShadow: '0 4px 24px var(--color-soft-shadow)',
-            position: 'sticky',
-            top: '90px',
-          }}>
+          <div
+            className="sticky-sidebar-col"
+            style={{
+              background: 'var(--color-warm-white)',
+              borderRadius: '24px',
+              padding: '36px 32px',
+              border: '0.5px solid rgba(0, 0, 0, 0.04)',
+              boxShadow: '0 4px 24px var(--color-soft-shadow)',
+              position: 'sticky',
+              top: '90px',
+            }}
+          >
             <h3 style={{ fontSize: '22px', marginBottom: '24px', fontWeight: 600 }}>
               Final Summary
             </h3>

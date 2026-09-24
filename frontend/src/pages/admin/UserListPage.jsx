@@ -228,7 +228,7 @@ const UserListPage = () => {
         {/* 1. DIRECTORY KPI CARDS */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
           gap: '20px',
           marginBottom: '32px',
         }}>
@@ -401,8 +401,8 @@ const UserListPage = () => {
                 <p style={{ fontSize: '15px', fontWeight: 600 }}>No client accounts match your search.</p>
               </div>
             ) : (
-              <div style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13.5px' }}>
+              <div className="table-responsive-wrapper" style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13.5px', minWidth: '700px' }}>
                   <thead>
                     <tr style={{ background: 'rgba(184, 149, 106, 0.05)', borderBottom: '1.5px solid rgba(184, 149, 106, 0.25)', color: '#6E6E73' }}>
                       <th style={{ padding: '16px 20px', fontWeight: 700, textTransform: 'uppercase', fontSize: '11px', letterSpacing: '0.1em' }}>Client ID</th>

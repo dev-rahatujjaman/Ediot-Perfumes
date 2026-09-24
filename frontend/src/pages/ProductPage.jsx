@@ -60,16 +60,16 @@ const ProductPage = () => {
         {/* Product Hero Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-          gap: '4rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+          gap: 'clamp(2rem, 4vw, 4rem)',
           alignItems: 'start',
-          marginBottom: '5rem'
+          marginBottom: 'clamp(3rem, 5vw, 5rem)'
         }}>
           {/* Product Image Card */}
           <div style={{
             background: 'var(--color-warm-white)',
             borderRadius: '24px',
-            padding: '2rem',
+            padding: 'clamp(1.5rem, 3vw, 2.5rem)',
             textAlign: 'center',
             boxShadow: '0 10px 40px rgba(0,0,0,0.05)'
           }}>
@@ -91,11 +91,11 @@ const ProductPage = () => {
               {product.category || 'Eau De Parfum'}
             </span>
 
-            <h1 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginBottom: '1rem', lineHeight: 1.2 }}>
+            <h1 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', marginBottom: '1rem', lineHeight: 1.2 }}>
               {product.name}
             </h1>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
               <Rating value={product.rating || 5} text={`${product.numReviews || 0} reviews`} />
               <span style={{ color: 'var(--color-grey)' }}>•</span>
               <span style={{
@@ -108,7 +108,7 @@ const ProductPage = () => {
             </div>
 
             <div style={{
-              fontSize: '2.5rem',
+              fontSize: 'clamp(2rem, 3.5vw, 2.5rem)',
               fontWeight: 600,
               color: 'var(--color-gold)',
               fontFamily: 'var(--font-display)',
@@ -118,7 +118,7 @@ const ProductPage = () => {
             </div>
 
             <p style={{
-              fontSize: '1.1rem',
+              fontSize: 'clamp(1rem, 1.5vw, 1.1rem)',
               lineHeight: '1.8',
               color: 'var(--color-charcoal)',
               marginBottom: '2rem'
@@ -167,7 +167,7 @@ const ProductPage = () => {
             {/* Value Props */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
               gap: '1rem',
               padding: '1.5rem',
               background: 'var(--color-warm-white)',
@@ -197,14 +197,15 @@ const ProductPage = () => {
         <div style={{
           background: 'var(--color-warm-white)',
           borderRadius: '24px',
-          padding: '3rem',
+          padding: 'clamp(1.5rem, 4vw, 3rem)',
           boxShadow: '0 10px 40px rgba(0,0,0,0.05)',
           marginBottom: '5rem'
         }}>
           {/* Tab Navigation */}
           <div style={{
             display: 'flex',
-            gap: '2rem',
+            gap: '1.5rem',
+            flexWrap: 'wrap',
             borderBottom: '1px solid var(--color-beige)',
             paddingBottom: '1rem',
             marginBottom: '2rem'

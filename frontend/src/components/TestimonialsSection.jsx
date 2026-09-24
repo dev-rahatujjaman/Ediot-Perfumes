@@ -59,7 +59,9 @@ const TestimonialsSection = () => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-end',
-          marginBottom: '80px',
+          flexWrap: 'wrap',
+          gap: '24px',
+          marginBottom: '60px',
         }}>
           <div>
             <div style={{
@@ -134,8 +136,8 @@ const TestimonialsSection = () => {
         {/* Testimonials Grid / Carousel Item */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '32px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+          gap: '28px',
         }}>
           {TESTIMONIALS.map((t, idx) => {
             const isFeatured = idx === activeIndex;

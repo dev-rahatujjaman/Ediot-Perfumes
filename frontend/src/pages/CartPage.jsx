@@ -78,17 +78,13 @@ const CartPage = () => {
             </Link>
           </div>
         ) : (
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 380px',
-            gap: '48px',
-            alignItems: 'start',
-          }}>
+          <div className="cart-layout-grid">
             {/* Bag Items List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {cartItems.map((item) => (
                 <div
                   key={item._id}
+                  className="cart-item-card"
                   style={{
                     background: 'var(--color-warm-white)',
                     borderRadius: '20px',
@@ -112,7 +108,7 @@ const CartPage = () => {
                     }}
                   />
 
-                  <div style={{ flex: 1 }}>
+                  <div style={{ flex: 1, minWidth: '160px' }}>
                     <div style={{
                       fontSize: '11px',
                       textTransform: 'uppercase',
@@ -144,8 +140,8 @@ const CartPage = () => {
                     </div>
                   </div>
 
-                  {/* Quantity Dropdown */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  {/* Quantity Dropdown & Remove Button */}
+                  <div className="cart-item-actions" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                     <select
                       value={item.qty}
                       onChange={(e) =>
@@ -200,15 +196,18 @@ const CartPage = () => {
             </div>
 
             {/* Order Summary Card */}
-            <div style={{
-              background: 'var(--color-warm-white)',
-              borderRadius: '24px',
-              padding: '36px 32px',
-              border: '0.5px solid rgba(0, 0, 0, 0.04)',
-              boxShadow: '0 4px 24px var(--color-soft-shadow)',
-              position: 'sticky',
-              top: '90px',
-            }}>
+            <div
+              className="sticky-sidebar-col"
+              style={{
+                background: 'var(--color-warm-white)',
+                borderRadius: '24px',
+                padding: '36px 32px',
+                border: '0.5px solid rgba(0, 0, 0, 0.04)',
+                boxShadow: '0 4px 24px var(--color-soft-shadow)',
+                position: 'sticky',
+                top: '90px',
+              }}
+            >
               <h3 style={{ fontSize: '22px', marginBottom: '24px', fontWeight: 600 }}>
                 Order Summary
               </h3>

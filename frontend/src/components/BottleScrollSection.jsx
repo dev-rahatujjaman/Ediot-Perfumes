@@ -600,6 +600,7 @@ const BottleScrollSection = () => {
 
       {/* Top Header Badge & Telemetry Bar */}
       <div
+        className="bottle-top-bar"
         style={{
           position: 'absolute',
           top: '32px',
@@ -732,6 +733,7 @@ const BottleScrollSection = () => {
 
       {/* Left Side: Dynamic Chapter Editorial Narrative Card */}
       <div
+        className="bottle-floating-left-card"
         style={{
           position: 'absolute',
           left: '48px',
@@ -808,6 +810,7 @@ const BottleScrollSection = () => {
 
       {/* Right Side: Interactive Bespoke Edition Customizer & Vault Reserve CTA */}
       <div
+        className="bottle-floating-right-card"
         style={{
           position: 'absolute',
           right: '48px',

@@ -121,8 +121,8 @@ const HousePillarsSection = () => {
         {/* Pillars Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '32px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+          gap: '28px',
         }}>
           {PILLARS.map((pillar, idx) => (
             <div
@@ -131,7 +131,7 @@ const HousePillarsSection = () => {
               style={{
                 background: '#FFFFFF',
                 borderRadius: '24px',
-                padding: '44px 36px',
+                padding: 'clamp(28px, 4vw, 44px) clamp(20px, 3vw, 36px)',
                 border: '1px solid rgba(184, 149, 106, 0.25)',
                 boxShadow: '0 10px 36px rgba(0, 0, 0, 0.04)',
                 display: 'flex',

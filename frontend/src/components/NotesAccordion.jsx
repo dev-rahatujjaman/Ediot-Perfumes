@@ -81,14 +81,9 @@ const NotesAccordion = () => {
       position: 'relative',
     }}>
       <div className="container">
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1.2fr',
-          gap: '80px',
-          alignItems: 'start',
-        }}>
+        <div className="accordion-layout-grid">
           {/* Left Column Sticky Intro */}
-          <div style={{ position: 'sticky', top: '120px' }}>
+          <div className="sticky-sidebar-col" style={{ position: 'sticky', top: '120px' }}>
             <div style={{
               fontSize: '11px',
               letterSpacing: '0.15em',
@@ -142,7 +137,7 @@ const NotesAccordion = () => {
                     onClick={() => toggle(item.id)}
                     style={{
                       width: '100%',
-                      padding: '28px 32px',
+                      padding: 'clamp(18px, 3vw, 28px) clamp(18px, 3vw, 32px)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',

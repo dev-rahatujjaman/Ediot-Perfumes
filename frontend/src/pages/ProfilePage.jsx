@@ -110,12 +110,7 @@ const ProfilePage = () => {
           <h1>My Profile & Orders</h1>
         </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '380px 1fr',
-          gap: '48px',
-          alignItems: 'start',
-        }}>
+        <div className="profile-layout-grid">
           {/* Profile Details Form */}
           <div style={{
             background: 'var(--color-warm-white)',

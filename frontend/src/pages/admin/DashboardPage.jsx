@@ -510,7 +510,7 @@ const DashboardPage = () => {
             {/* 2. ANALYTICS & REORDER MONITORING ROW */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '24px',
               marginBottom: '36px',
             }}>
@@ -769,7 +769,7 @@ const DashboardPage = () => {
                   No reservations match the specified filter.
                 </div>
               ) : (
-                <div style={{ overflowX: 'auto' }}>
+                <div className="table-responsive-wrapper" style={{ overflowX: 'auto' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13.5px' }}>
                     <thead>
                       <tr style={{ borderBottom: '1.5px solid rgba(184, 149, 106, 0.25)', color: '#6E6E73' }}>

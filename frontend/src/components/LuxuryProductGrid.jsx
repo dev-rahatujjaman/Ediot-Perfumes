@@ -325,7 +325,7 @@ const LuxuryProductGrid = () => {
           ref={gridContainerRef}
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
             gap: '32px',
             marginBottom: '32px',
           }}
@@ -701,6 +701,7 @@ const LuxuryProductGrid = () => {
           onClick={() => setQuickViewProduct(null)}
         >
           <div
+            className="quick-view-modal-grid"
             style={{
               position: 'relative',
               background: '#FFFFFF',

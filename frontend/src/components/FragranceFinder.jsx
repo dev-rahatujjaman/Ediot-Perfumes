@@ -160,7 +160,7 @@ const FragranceFinder = () => {
           margin: '0 auto',
           background: 'white',
           borderRadius: '28px',
-          padding: '56px 48px',
+          padding: 'clamp(24px, 5vw, 56px) clamp(18px, 4vw, 48px)',
           boxShadow: '0 12px 48px rgba(0,0,0,0.06)',
           border: '0.5px solid rgba(0,0,0,0.04)',
         }}>
@@ -171,6 +171,8 @@ const FragranceFinder = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '12px',
                 marginBottom: '40px',
                 paddingBottom: '20px',
                 borderBottom: '1px solid var(--color-beige)',
@@ -179,7 +181,7 @@ const FragranceFinder = () => {
                   <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                     {activeQuestion.subtitle}
                   </div>
-                  <h3 style={{ fontSize: '24px', fontWeight: 600, marginTop: '4px' }}>
+                  <h3 style={{ fontSize: 'clamp(20px, 3vw, 24px)', fontWeight: 600, marginTop: '4px' }}>
                     {activeQuestion.title}
                   </h3>
                 </div>
@@ -197,11 +199,14 @@ const FragranceFinder = () => {
               </div>
 
               {/* Options Grid */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '18px',
-              }}>
+              <div
+                className="finder-options-grid"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '18px',
+                }}
+              >
                 {activeQuestion.options.map((option) => (
                   <button
                     key={option.id}
@@ -258,11 +263,13 @@ const FragranceFinder = () => {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '16px',
                 marginBottom: '32px',
                 paddingBottom: '20px',
                 borderBottom: '1px solid var(--color-beige)',
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
                   <span style={{
                     background: 'var(--color-gold)',
                     color: 'white',
@@ -297,12 +304,15 @@ const FragranceFinder = () => {
                 </button>
               </div>
 
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: '260px 1fr',
-                gap: '40px',
-                alignItems: 'center',
-              }}>
+              <div
+                className="finder-result-grid"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '260px 1fr',
+                  gap: '40px',
+                  alignItems: 'center',
+                }}
+              >
                 {/* Result Image */}
                 <div style={{
                   borderRadius: '20px',
@@ -322,7 +332,7 @@ const FragranceFinder = () => {
                   <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 600, marginBottom: '6px' }}>
                     {result.category}
                   </div>
-                  <h2 style={{ fontSize: '32px', marginBottom: '12px' }}>{result.name}</h2>
+                  <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 32px)', marginBottom: '12px' }}>{result.name}</h2>
                   <p style={{ color: 'var(--color-grey)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
                     {result.headline}
                   </p>
@@ -348,7 +358,7 @@ const FragranceFinder = () => {
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
                     <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-gold)' }}>
                       ${result.price}
                     </div>
