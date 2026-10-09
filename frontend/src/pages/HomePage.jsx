@@ -6,8 +6,10 @@ import HousePillarsSection from '../components/HousePillarsSection';
 import NotesAccordion from '../components/NotesAccordion';
 import EditorialStoryScroll from '../components/EditorialStoryScroll';
 import TestimonialsSection from '../components/TestimonialsSection';
+import IngredientConstellationScroll from '../components/IngredientConstellationScroll';
 import VelocityShaderGallery from '../components/VelocityShaderGallery';
 import LookbookSection from '../components/LookbookSection';
+import ParallaxFlaconTunnel from '../components/ParallaxFlaconTunnel';
 
 const HomePage = () => {
   const location = useLocation();
@@ -184,11 +186,17 @@ const HomePage = () => {
       {/* 6. AWWWARDS SOTD EDITORIAL STORY SCROLL */}
       <EditorialStoryScroll />
 
+      {/* 6.5. INGREDIENT CONSTELLATION — SCROLL-DRIVEN 3D ZOOM */}
+      <IngredientConstellationScroll />
+
       {/* 7. THREE.JS GSAP SCROLL-VELOCITY DISTORTION SHADER GALLERY */}
       <VelocityShaderGallery />
 
       {/* 8. CLIENT TESTIMONIALS GUILD */}
       <TestimonialsSection />
+
+      {/* 8.5. 3D PERSPECTIVE WARP TUNNEL — SPATIAL FLACON EXPEDITION */}
+      <ParallaxFlaconTunnel />
 
       {/* 9. EDITORIAL LOOKBOOK */}
       <LookbookSection />

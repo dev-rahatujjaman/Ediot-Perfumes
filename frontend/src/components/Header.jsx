@@ -18,7 +18,9 @@ import {
   FiPhoneCall,
   FiClock,
   FiStar,
-  FiChevronRight
+  FiChevronRight,
+  FiLayers,
+  FiSun
 } from 'react-icons/fi';
 import { logout } from '../store/slices/authSlice';
 
@@ -767,6 +769,8 @@ const Header = () => {
                   { label: 'Haute Fragrance Collection', target: 'fragrances', icon: <FiAward />, tag: 'Private Reserve' },
                   { label: 'The Grasse Botanical Heritage', target: 'maison', icon: <FiCompass />, tag: 'Est. 1928' },
                   { label: 'Olfactory Accord Notes', target: 'olfactory', icon: <FiSliders />, tag: '32% Extrait' },
+                  { label: 'The Scent Constellation', target: 'olfactory-lexicon', icon: <FiLayers />, tag: '3D Spatial Traverse' },
+                  { label: 'The Flacon Warp Tunnel', target: 'spatial-tunnel-expedition', icon: <FiCompass />, tag: 'Spatial Fly-Through' },
                 ].map((item, idx) => (
                   <li key={idx}>
                     <button
