@@ -74,6 +74,7 @@ const BOUTIQUES = [
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
@@ -83,6 +84,7 @@ const Header = () => {
   const [cartAnimate, setCartAnimate] = useState(false);
 
   const searchInputRef = useRef(null);
+  const lastScrollY = useRef(0);
   const accountRef = useRef(null);
 
   const navigate = useNavigate();
@@ -106,10 +108,24 @@ const Header = () => {
     }
   }, [cartItemsCount]);
 
-  // Scroll listener for translucent frosted header
+  // Scroll listener for translucent frosted header + hide/show on scroll direction
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 20);
+
+      // Always show header near the top of the page
+      if (currentScrollY <= 20) {
+        setHeaderVisible(true);
+      } else if (currentScrollY > lastScrollY.current + 5) {
+        // Scrolling down — hide header (5px threshold prevents jitter)
+        setHeaderVisible(false);
+      } else if (currentScrollY < lastScrollY.current - 5) {
+        // Scrolling up — show header
+        setHeaderVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -192,6 +208,7 @@ const Header = () => {
         right: 0,
         zIndex: 9990,
         transition: 'all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        transform: headerVisible ? 'translateY(0)' : 'translateY(-100%)',
         background: isDarkHeader ? 'rgba(10, 10, 12, 0.92)' : 'transparent',
         backdropFilter: isDarkHeader ? 'saturate(180%) blur(20px)' : 'none',
         WebkitBackdropFilter: isDarkHeader ? 'saturate(180%) blur(20px)' : 'none',
